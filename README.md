@@ -11,7 +11,6 @@ __3. Websocket App:__ This is the node websocket server application
 
 
 # How to Run the project
-
 __1. Clone the repository from URL -> https://github.com/himanshu206/q.ai.git
 
 __2. Open the folder `websocket server` in terminal and run command `npm install` to load all dependencies and then run command `node server.js` to start the websocket server.
