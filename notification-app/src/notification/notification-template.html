@@ -1,0 +1,104 @@
+<div class="notification">
+	<div class="notification-header">
+		<div class="date">
+			<h5>{{ date }}</h5>
+		</div>
+		<div class="notification-meta">
+			<ul>
+				<li ng-repeat="meta in notificationListMeta">
+					<span> {{ meta.count }} </span>
+					<span> {{ meta.type }} </span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="notification-body">
+		<ul class="notification-list">
+			<li ng-repeat="notification in notifications" ng-if="notification.message"
+			    ng-style="$index == notifications.length - 1 && {'border-bottom': 0}">
+				<div am-time-ago="notification.createdAt"></div>
+				<div>{{ notification.message }}</div>
+			</li>
+		</ul>
+
+		<h6 style="text-align: center" ng-if="notifications.length == 0">
+			No notifications..
+		</h6>
+	</div>
+
+	<div class="align-center alert alert-danger" ng-if="errorMsg">
+		{{ errorMsg }}
+	</div>
+
+	<div class="align-center alert alert-success" ng-if="successMsg">
+		{{ successMsg }}
+	</div>
+</div>
+
+<style>
+	.notification {
+		padding: 12px;
+		width: 350px;
+		border: 1px solid lightgray;
+		margin: 60px auto;
+		border-top-width: 5px;
+	}
+
+	.notification ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	.notification-header {
+		border-bottom: 1px solid lightgray;
+	}
+
+	.notification-header .date {
+		border-bottom: 1px solid lightgray;
+		font-weight: 300;
+	    color: lightgray;
+	}
+
+	.notification-meta ul {
+		/*text-align: center;*/
+	}
+
+	.notification-meta ul li {
+		padding: 10px;
+		text-transform: capitalize;
+	}
+
+	.notification-meta ul li span {
+		display: inline-block;
+		width: 40%;
+	}
+
+	.notification-meta ul li span:first-child {
+		color: dodgerblue;
+		font-size: 35px;
+		text-align: right;
+		font-weight: 200;
+	}
+
+	.notification-meta ul li span:last-child {
+		position: relative;
+		bottom: 6px;
+		text-align: left;
+		padding-left: 6px;
+		color: slategrey;
+	}
+
+	.notification-list {
+	    max-height: 360px;
+	    overflow-y: scroll;
+	}
+
+	.notification-list li {
+		border-bottom: 1px solid lightgray;
+		padding: 8px;
+	}
+
+	.notification-list li div:last-child {
+		color: lightgray;
+	}
+</style>

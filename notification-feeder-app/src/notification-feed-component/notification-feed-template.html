@@ -1,0 +1,65 @@
+<div class="notification-feed">
+	<div class="notification-feed-header">
+		<h5>Feed Notifications to Websocket Server</h5>
+	</div>
+	<div class="notification-feed-body">
+		<form>
+			<div class="form-group">
+				<label for="notification-msg">Message</label>
+				<textarea rows="5"
+				          class="form-control"
+				          ng-model="notification.message"
+				          placeholder="Enter notification message..."
+				          id="notification-msg"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="notification-type">Type</label>
+				<select id="notification-type" ng-model="notification.type">
+					<option value="task">Assigned Task</option>
+					<option value="reminder">Reminder</option>
+					<option value="general">Notification</option>
+				</select>
+			</div>
+
+			<div class="form-group align-center">
+				<button type="submit"
+				        class="btn btn-primary"
+				        ng-disabled="!canSubmit()"
+				        ng-click="feedNotification()">Submit</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="align-center alert alert-danger" ng-if="errorMsg">
+		{{ errorMsg }}
+	</div>
+
+	<div class="align-center alert alert-success" ng-if="successMsg">
+		{{ successMsg }}
+	</div>
+</div>
+
+<style>
+	*:focus {
+		box-shadow: none !important;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.notification-feed {
+		padding: 20px 25px 10px;
+		width: 500px;
+		border: 1px solid lightgray;
+		margin: 60px auto;
+	}
+
+	.notification-feed select {
+		height: 35px;
+	}
+
+	.notification-feed form button {
+		margin-top: 20px;
+	}
+</style>
