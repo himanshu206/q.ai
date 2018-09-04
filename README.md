@@ -11,14 +11,14 @@ __3. Websocket App:__ This is the node websocket server application
 
 
 # How to Run the project:
-__1. Clone the repository from URL -> https://github.com/himanshu206/q.ai.git
+__1.__ Clone the repository from URL -> https://github.com/himanshu206/q.ai.git
 
-__2. Open the folder `websocket server` in terminal and run command `npm install` to load all dependencies and then run command `node server.js` to start the websocket server.
+__2.__ Open the folder `websocket server` in terminal and run command `npm install` to load all dependencies and then run command `node server.js` to start the websocket server.
 
-__3. Open the folder `notification app` in terminal and run command `npm install` to load all dependencies and then run command `live-server` to serve the folder via a light weight web server.
+__3.__ Open the folder `notification app` in terminal and run command `npm install` to load all dependencies and then run command `live-server` to serve the folder via a light weight web server.
 
-__4. Repeat step 2 for folder `notification feeder app`
+__4.__ Repeat step 2 for folder `notification feeder app`
 
-__5. Now the setup is ready, and you can start pushing notifications from `notification feeder app` to websocket server which will push those notifications to `notification app`
+__5.__ Now the setup is ready, and you can start pushing notifications from `notification feeder app` to websocket server which will push those notifications to `notification app`
 
 
